@@ -1,16 +1,13 @@
 public class Harshad {
-    public boolean solution(int num) {
-        String[] temp = String.valueOf(num).split("");
-
+    public boolean solution(int x) {
+        int num = x;
         int sum = 0;
-        for (String s : temp) {
-            sum += Integer.parseInt(s);
+
+        while(x != 0){
+            sum += x%10; // 나머지
+            x /= 10; // 몫
         }
 
-        if (num % sum == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return num %  sum == 0;
     }
 }

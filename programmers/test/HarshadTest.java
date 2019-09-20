@@ -7,14 +7,12 @@ public class HarshadTest {
     public void solution_true() {
         Harshad solution = new Harshad();
 
-
-        long startTime = System.nanoTime();
         assertTrue("true",solution.solution(10));
         assertFalse("false",solution.solution(13));
         assertTrue("true",solution.solution(12));
+        assertFalse("false",solution.solution(7777));
+        assertFalse("false",solution.solution(8946));
+        assertTrue("true",solution.solution(10000));
 
-
-        long estimatedTime = System.nanoTime() - startTime;
-        System.out.println("걸린 시간 : " + estimatedTime/1000000000.0 + " milli seconds");
     }
 }
