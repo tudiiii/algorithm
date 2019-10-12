@@ -9,14 +9,14 @@ public class CaesarCipher {
 
             chars[i] = s.charAt(i);
 
-            if (chars[i] > 64 && chars[i] < 91) {
+            if (chars[i] > 64 && chars[i] < 91) { // 대문자
                 ascii[i] = chars[i] + n;
                 if (ascii[i] > 90) {
                     ascii[i] = ascii[i] - 26;
                 }
             }
 
-            else if (chars[i] > 96 && chars[i] < 123) {
+            else if (chars[i] > 96 && chars[i] < 123) { // 소문자
                 ascii[i] = chars[i] + n;
                 if (ascii[i] > 122) {
                     ascii[i] = ascii[i] - 26;

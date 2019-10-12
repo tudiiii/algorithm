@@ -16,8 +16,8 @@ public class CrazyNumTest {
 
     @Test
     public void solution2() {
-        String answer = "Hi My NaMe Is TuDiIiI";
-        assertEquals(answer,solution.solution("hi my name is tudiiii"));
-        assertEquals(answer,solution2.solution("hi my name is tudiiii"));
+        String answer = "Hi My NaMeE Is TuDiIiI";
+        assertEquals(answer,solution.solution("hi my namee is tudiiii"));
+        assertEquals(answer,solution2.solution("hi my namee is tudiiii"));
     }
 }

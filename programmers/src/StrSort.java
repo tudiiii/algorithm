@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class StrSort{
     public String[] solution(String []str, int n){
         Arrays.sort(str, new Comparator<String>() {

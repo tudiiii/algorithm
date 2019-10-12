@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 public class XIntervalTest {
 
     XInterval solution = new XInterval();
+
     @Test
     public void 양의정수() {
         long[] answer = {2,4,6,8,10};
@@ -16,6 +17,4 @@ public class XIntervalTest {
         long[] answer = {-4,-8};
         assertArrayEquals(answer,solution.solution(-4,2));
     }
-
-
 }
