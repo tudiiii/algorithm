@@ -9,7 +9,7 @@ public class Leetcode_121 {
             for(int j=1;j<length;j++){
                 price = prices[j]-prices[i];
                 if(price>maxPrice && i<j){
-                    maxPrice = prices[j]-prices[i];
+                    maxPrice = price;
                 }
             }
         }
