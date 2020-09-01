@@ -7,14 +7,16 @@ public class Leetcode_121 {
 
         for(int i=0;i<length;i++){
             for(int j=1;j<length;j++){
+
                 price = prices[j]-prices[i];
+
                 if(price>maxPrice && i<j){
                     maxPrice = price;
                 }
+
             }
         }
 
         return maxPrice;
-
     }
 }
