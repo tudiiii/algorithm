@@ -12,8 +12,15 @@ public class programmers_42626Test {
         int expected = 2;
 
         Assert.assertEquals(s.solution(scoville,K),expected);
-
     }
 
+    @Test
+    public void K가되지않을때(){
+        int[] scoville = {1,2,3};
+        int K = 20;
+        int expected = -1;
+
+        Assert.assertEquals(s.solution(scoville,K),expected);
+    }
 
 }
