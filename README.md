@@ -2,7 +2,9 @@
 
 ### 2020년 9월
 [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) ➡ [풀이](https://github.com/tudiiii/algorithm/blob/master/leetcode/src/Leetcode_121.java)
+
 [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) ➡ 
+
 [42626. 더 맵게](https://programmers.co.kr/learn/courses/30/lessons/42626) ➡ [풀이](https://tudiiii.github.io/TudyDev/Algorithm/Programmers_42626)
 
 ### 그 언젠가 풀었던 알고리즘들 ♠
