@@ -1,6 +1,5 @@
-
+// programmers 더 맵게
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 public class programmers_42626 {
     public int solution(int[] scoville, int K) {
