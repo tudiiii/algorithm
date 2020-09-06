@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class Leetcode_121Test {
 
-    Leetcode_121_1 s = new Leetcode_121_1();
+    Leetcode_121 s = new Leetcode_121();
 
     @Test
     public void case1(){
