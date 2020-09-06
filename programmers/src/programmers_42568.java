@@ -27,13 +27,12 @@ public class programmers_42568 {
         // 데이터 삽입
         for(int progress : progresses){
             pro.add(progress);
-            i++;
         }
 
         // 작업날짜 구하기
         while(!pro.isEmpty()){
-          days.add(dayCount(pro.poll(),speeds[i]));
-          i++;
+            days.add(dayCount(pro.poll(),speeds[i]));
+            i++;
         }
 
         int count= 1;
@@ -43,11 +42,12 @@ public class programmers_42568 {
             if(days.peek()>day){
                 day = days.poll();
                 result.offer(count);
-                count=1;
-            }
 
-            days.poll();
-            count++;
+                count=1;
+            }else{
+                days.poll();
+                count++;
+            }
 
             if(days.size()==0){
                 result.offer(count);
@@ -62,11 +62,9 @@ public class programmers_42568 {
 
         return answer;
     }
-    
+
     // 배포 가능한 날짜 구하기
     public int dayCount(int process, int speed){
         return (int) Math.ceil((double)(100-process)/speed);
     }
-
-
 }
