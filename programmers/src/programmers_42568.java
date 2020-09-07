@@ -61,12 +61,12 @@ public class programmers_42568 {
         int day = days.remove();
 
         while(!days.isEmpty()){
-            if(days.peek()>day){
+            if(days.peek()>day){ // 배포
                 day = days.poll();
                 result.offer(count);
 
                 count=1;
-            }else{
+            }else{ // 배포같이할 일 찾기
                 days.poll();
                 count++;
             }
