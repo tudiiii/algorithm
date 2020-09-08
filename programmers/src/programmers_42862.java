@@ -1,15 +1,28 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
+
+/* 체육복
+테스트 1 〉	통과 (0.03ms, 70.1MB)
+테스트 2 〉	통과 (0.08ms, 69.3MB)
+테스트 3 〉	통과 (0.06ms, 68.5MB)
+테스트 4 〉	통과 (0.06ms, 69.2MB)
+테스트 5 〉	통과 (0.06ms, 68.5MB)
+테스트 6 〉	통과 (0.03ms, 69.5MB)
+테스트 7 〉	통과 (0.06ms, 69.1MB)
+테스트 8 〉	통과 (0.07ms, 68.6MB)
+테스트 9 〉	통과 (0.05ms, 68.4MB)
+테스트 10 〉	통과 (0.09ms, 68.8MB)
+테스트 11 〉	통과 (0.05ms, 68.8MB)
+테스트 12 〉	통과 (0.04ms, 68MB)
+ */
 
 public class programmers_42862 {
 
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = n - lost.length;
 
-        LinkedList<Integer> lostStudent = new LinkedList();
-        LinkedList<Integer> reserveStudent = new LinkedList();
-
+        List<Integer> lostStudent = new ArrayList<>();
+        List<Integer> reserveStudent = new ArrayList<>();
 
         for(int i=0;i<lost.length;i++){
             for(int j=0;j<reserve.length;j++){
@@ -21,25 +34,31 @@ public class programmers_42862 {
             }
         }
 
-        for(int i=0;i<lost.length;i++) if(lost[i]!=0) lostStudent.add(lost[i]);
-        for(int i=0;i<reserve.length;i++) if(reserve[i]!=0) reserveStudent.add(reserve[i]);
+        for(int lo : lost)  if(lo!=0) lostStudent.add(lo);
+        for(int re : reserve)   if(re!=0)   reserveStudent.add(re);
 
         if(reserveStudent.size()==0) return answer;
 
+        int i=0; int j=0;
         while(!lostStudent.isEmpty()){
-
-            if(lostStudent.peek()==reserveStudent.peek()+1 || lostStudent.peek()==reserveStudent.peek()-1 ){
+            if(lostStudent.get(i)==(reserveStudent.get(j)+1) || lostStudent.get(i)==(reserveStudent.get(j)-1)){
+                lostStudent.remove(i);
+                reserveStudent.remove(j);
+                j=0; // 비교가 끝났기 때문에 j초기화 (이중for문 느낌)
                 answer++;
-                lostStudent.poll();
-                reserveStudent.poll();
-            }else {
-                lostStudent.poll();
+            }else{
+                j++;
+                if(j==reserveStudent.size()){
+                    lostStudent.remove(i);
+                    j=0;
+                }
             }
 
             if(reserveStudent.isEmpty()){
                 break;
             }
         }
+
 
         return answer;
     }
