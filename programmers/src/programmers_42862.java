@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /* 체육복
 테스트 1 〉	통과 (0.03ms, 70.1MB)
 테스트 2 〉	통과 (0.08ms, 69.3MB)
@@ -15,6 +12,9 @@ import java.util.List;
 테스트 11 〉	통과 (0.05ms, 68.8MB)
 테스트 12 〉	통과 (0.04ms, 68MB)
  */
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class programmers_42862 {
 
