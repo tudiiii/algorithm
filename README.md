@@ -1,15 +1,15 @@
 # 🌟🌟 algorithm 🌟🌟
 
-### 2020년 9월
+## 2020년 9월
 
-## Programmers
+### Programmers
 [42862. 체육복](https://programmers.co.kr/learn/courses/30/lessons/42862) ➡ 
 
 [42862. 기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586) ➡ 
 
 [42626. 더 맵게](https://programmers.co.kr/learn/courses/30/lessons/42626) ➡ [풀이](https://tudiiii.github.io/TudyDev/Algorithm/Programmers_42626)
 
-## LeetCode
+### LeetCode
 [543. Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) ➡ 
 
 [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) ➡ [풀이](https://github.com/tudiiii/algorithm/blob/master/leetcode/src/Leetcode_121.java)
