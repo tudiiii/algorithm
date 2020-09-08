@@ -19,11 +19,13 @@ import java.util.List;
 public class programmers_42862 {
 
     public int solution(int n, int[] lost, int[] reserve) {
+        // 전체학생 수 - 체육복 잃어버린 학생 수
         int answer = n - lost.length;
 
         List<Integer> lostStudent = new ArrayList<>();
         List<Integer> reserveStudent = new ArrayList<>();
 
+        // 여분이 있는데 체육복을 잃어버린 학생 0
         for(int i=0;i<lost.length;i++){
             for(int j=0;j<reserve.length;j++){
                 if(lost[i]==reserve[j] && lost[i]!=0){
@@ -34,21 +36,27 @@ public class programmers_42862 {
             }
         }
 
+        // 체육복 분실했지만 여분이 있는 학생 제외하고 LIST에 추가
         for(int lo : lost)  if(lo!=0) lostStudent.add(lo);
         for(int re : reserve)   if(re!=0)   reserveStudent.add(re);
 
+        // 체육복 여분이 있는 학생이 없으면 END
         if(reserveStudent.size()==0) return answer;
 
-        int i=0; int j=0;
+        int i=0; int j=0; // 이중 for문 처럼 List 돌리기 (기준 -> 체육복 없는 학생)
         while(!lostStudent.isEmpty()){
+            // 체육복 여유분을 나눠줄 수 있을 때
             if(lostStudent.get(i)==(reserveStudent.get(j)+1) || lostStudent.get(i)==(reserveStudent.get(j)-1)){
+                // 수업에 참여할 수 있는 학생들은 제외
                 lostStudent.remove(i);
                 reserveStudent.remove(j);
-                j=0; // 비교가 끝났기 때문에 j초기화 (이중for문 느낌)
-                answer++;
+                j=0; // 비교가 끝났기 때문에 j초기화 (이중for 문 느낌)
+                answer++; // 수업에 참여할 수 있는 학생 수 ++
             }else{
-                j++;
+                j++; 
+                // 체육복을 빌릴수가 없을때
                 if(j==reserveStudent.size()){
+                    // 수업 참여 못 하는 학생 제외
                     lostStudent.remove(i);
                     j=0;
                 }
@@ -60,6 +68,7 @@ public class programmers_42862 {
         }
 
 
+        // 체육복 여분이 있는 학생이 없으면 END
         return answer;
     }
 
