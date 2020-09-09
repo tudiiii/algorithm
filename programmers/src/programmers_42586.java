@@ -17,7 +17,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class programmers_42568 {
+public class programmers_42586 {
     public int[] solution(int[] progresses, int[] speeds) {
         LinkedList<Integer> pro = new LinkedList<>();
         LinkedList<Integer> list;
@@ -53,7 +53,7 @@ public class programmers_42568 {
         return (int) Math.ceil((double)(100-process)/speed);
     }
 
-    // 몇 개의 기능이 배포되는지
+    // 리스트에 한 번에 배포될 수 있는 기능갯수 추가
     public LinkedList<Integer> functionNum(Queue<Integer> days){
 
         LinkedList<Integer> result = new LinkedList<>();

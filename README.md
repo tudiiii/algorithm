@@ -3,9 +3,9 @@
 ## 2020년 9월
 
 ### Programmers
-[42862. 체육복](https://programmers.co.kr/learn/courses/30/lessons/42862) ➡ 
+[42862. 체육복](https://programmers.co.kr/learn/courses/30/lessons/42862) ➡ [풀이](https://tudiiii.github.io/TudyDev/Algorithm/Programmers_42862)
 
-[42862. 기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586) ➡ 
+[42862. 기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586) ➡ [풀이](https://tudiiii.github.io/TudyDev/Algorithm/Programmers_42586)
 
 [42626. 더 맵게](https://programmers.co.kr/learn/courses/30/lessons/42626) ➡ [풀이](https://tudiiii.github.io/TudyDev/Algorithm/Programmers_42626)
 
