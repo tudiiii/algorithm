@@ -1,31 +1,35 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 
 public class Leetcode_136 {
     public int singleNumber(int[] nums) {
         LinkedList<Integer> number = new LinkedList<>();
 
-        for(int num:nums) number.offer(num);
+        Arrays.sort(nums); // 정렬
+        for(int num : nums) number.offer(num);
 
-        int numFlag = number.remove(0);
+        return sameNumberDelete(number);
+    }
+
+    // 같은 값 제거 함
+    public int sameNumberDelete(LinkedList<Integer> number){
         int i=0;
-
         while(number.size()!=0){
-            if(numFlag == number.get(i)){
-                number.remove(i);
-                numFlag =  number.poll();
-                i=0;
-            }else{
-                i++;
+            if(number.size()==1){ // 숫자가 하나일 때
+                return number.remove(i);
             }
 
-            if(i==number.size()){
-                break;
+            if(!number.get(i).equals(number.get(i+1))){ // 숫자가 같은게 없으면 바로 값 리턴
+                return number.remove(i);
             }
+
+            // 같은 값들 삭제
+            number.remove(i);
+            // i값이 remove(i)가 되기 전 i++값이 remove(i)한 후 i값이 되므로 i++이 아니라 i를 remove
+            number.remove(i);
         }
 
-        return numFlag;
+        return 1;
+
     }
 }
