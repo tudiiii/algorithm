@@ -7,8 +7,9 @@ public class StrangeCounterTest {
 
     @Test
     public void test(){
-//        Assert.assertEquals(s.strangeCounter(4),6);
-        Assert.assertEquals(s.strangeCounter(17),5);
+        Assert.assertEquals(s.strangeCounter(4),6);
+        Assert.assertEquals(s.strangeCounter(22),24);
+        Assert.assertEquals(s.strangeCounter(10),12);
     }
 
 }
