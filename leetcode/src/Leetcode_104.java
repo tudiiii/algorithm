@@ -20,10 +20,10 @@ public class Leetcode_104 {
         return getMaxDepth(root, 0);
     }
 
-    public int getMaxDepth(TreeNode node, int depth) {
-        if (node == null) return depth;
+    public int getMaxDepth(TreeNode root, int depth) {
+        if (root == null) return depth;
 
-        return Math.max(getMaxDepth(node.left, depth + 1), getMaxDepth(node.right, depth + 1));
+        return Math.max(getMaxDepth(root.left, depth + 1), getMaxDepth(root.right, depth + 1));
     }
 
 }
