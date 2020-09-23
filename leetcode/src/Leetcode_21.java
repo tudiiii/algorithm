@@ -1,5 +1,8 @@
-import java.util.LinkedList;
-
+/*
+*  Merge two sorted lists
+*  runtime 0ms
+*  memory usage 39.2MB
+*/
 class ListNode {
       int val;
       ListNode next;
@@ -10,12 +13,15 @@ class ListNode {
 public class Leetcode_21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
-        LinkedList<Integer> list1;
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
 
-        System.out.println(l1.val);
-
-
-
-        return l1;
+        if(l1.val<l2.val){
+            l1.next = mergeTwoLists(l1.next,l2);
+            return l1;
+        }else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
     }
 }
