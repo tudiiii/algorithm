@@ -1,3 +1,9 @@
+
+/*
+104. Maximum Depth of Binary Tree
+runtime 0 ms	memory 39.1 MB
+*/
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -20,7 +26,7 @@ public class Leetcode_104 {
         return getMaxDepth(root, 0);
     }
 
-    public int getMaxDepth(TreeNode root, int depth) {
+    public int getMaxDepth(TreeNode root, int depth) { // right vs left
         if (root == null) return depth;
 
         return Math.max(getMaxDepth(root.left, depth + 1), getMaxDepth(root.right, depth + 1));
