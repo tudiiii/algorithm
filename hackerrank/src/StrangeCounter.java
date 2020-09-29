@@ -16,5 +16,4 @@ public class StrangeCounter {
         // 21 - 15 + 1 = 7
         return time-t+1;
     }
-
 }

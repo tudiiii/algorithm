@@ -17,7 +17,8 @@ public class Leetcode_448 {
             if(element.peek()==i){
                 element.poll();
             }else {
-                out.add(element.poll());
+                out.add(i);
+                element.poll();
             }
             i++;
         }

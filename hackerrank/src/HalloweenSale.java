@@ -17,5 +17,4 @@ public class HalloweenSale {
         }
         return answer;
     }
-
 }
