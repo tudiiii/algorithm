@@ -15,9 +15,8 @@ public class Programmers_42883 {
             }else{
                 i++;
             }
-            if (i >= 1) {
-                i++;
-            }
+
+            if (i >= 1) i++;
         }
 
         return an.toString();
