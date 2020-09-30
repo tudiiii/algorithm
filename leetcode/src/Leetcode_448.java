@@ -1,7 +1,3 @@
-/*
-Run time : 31 ms
-Memory Usage: 47.7 MB
- */
 import java.util.*;
 
 public class Leetcode_448 {
