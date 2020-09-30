@@ -9,9 +9,10 @@ public class Programmers_42883Test {
 
     @Test
     public void test(){
-        Assert.assertEquals(s.solution("1924",2),"94");
-        Assert.assertEquals(s.solution("1231234",3),"3234");
-        Assert.assertEquals(s.solution("4177252841",4),"775841");
+//        Assert.assertEquals(s.solution("1924",2),"94");
+//        Assert.assertEquals(s.solution("1231234",3),"3234");
+//        Assert.assertEquals(s.solution("4177252841",4),"775841");
+        Assert.assertEquals(s.solution("12876321997",4),"8763997");
     }
 
 }

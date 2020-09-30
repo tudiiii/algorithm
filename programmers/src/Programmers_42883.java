@@ -1,5 +1,6 @@
 public class Programmers_42883 {
     public String solution(String number, int k) {
+        // 실패
         StringBuilder an = new StringBuilder(number);
 
         int deleteCnt = 0;
