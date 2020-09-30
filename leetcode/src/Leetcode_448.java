@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Leetcode_448 {
     /*
-        첫째 푼 방법
+        두번째 푼 방법
         Run time : 17 ms
         Memory Usage: 47.6 MB
     */
