@@ -1,25 +1,31 @@
+import java.util.Stack;
+
 public class Programmers_42883 {
     public String solution(String number, int k) {
-        // 실패
-        StringBuilder an = new StringBuilder(number);
+
+        char[] answer = new char[number.length() - k];
+        Stack<Character> stack = new Stack<>();
+        char[] nums = number.toCharArray();
 
         int deleteCnt = 0;
-        int i =0;
+        int i=0;
 
-        while(deleteCnt!=k){
-            if(an.charAt(i)<an.charAt(i+1) ){
-                an.deleteCharAt(i);
+        while(i!=nums.length){
+
+            if(!stack.isEmpty() && stack.peek()<nums[i] && deleteCnt != k) {
+                stack.pop();
                 deleteCnt++;
-            }else if(an.charAt(i)>an.charAt(i+1)) {
-                an.deleteCharAt(i + 1);
-                deleteCnt++;
-            }else{
-                i++;
             }
 
-            if (i >= 1) i++;
+            stack.push(nums[i]);
+            i++;
+            System.out.println(stack);
         }
 
-        return an.toString();
+        for (i=0; i<answer.length; i++) {
+            answer[i] = stack.get(i);
+        }
+        return new String(answer);
+
     }
 }
