@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Leetcode_1 {
+    /*
+        Runtime: 129 ms
+        Memory Usage: 39.5 MB
+     */
     public int[] twoSum(int[] nums, int target) {
 
         List<Integer> answerList = new ArrayList<>();
