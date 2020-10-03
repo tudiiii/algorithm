@@ -1,3 +1,18 @@
+/*
+큰 수 만들기 [탐욕법(Greedy)
+테스트 1 〉	통과 (0.27ms, 53.1MB)
+테스트 2 〉	통과 (0.36ms, 53.9MB)
+테스트 3 〉	통과 (0.43ms, 52MB)
+테스트 4 〉	통과 (1.31ms, 52MB)
+테스트 5 〉	통과 (1.88ms, 52.5MB)
+테스트 6 〉	통과 (9.23ms, 52.6MB)
+테스트 7 〉	통과 (27.42ms, 53.8MB)
+테스트 8 〉	통과 (30.94ms, 55.8MB)
+테스트 9 〉	통과 (49.42ms, 61.1MB)
+테스트 10 〉	통과 (95.25ms, 62.6MB)
+테스트 11 〉	통과 (0.29ms, 52.8MB)
+테스트 12 〉	통과 (0.29ms, 52.4MB)
+ */
 import java.util.Stack;
 
 public class Programmers_42883 {
@@ -11,8 +26,8 @@ public class Programmers_42883 {
         int i=0;
 
         while(i!=nums.length){
-
-            if(!stack.isEmpty() && stack.peek()<nums[i] && deleteCnt != k) {
+            // 스택안의 값이 작으면 pop
+            while(!stack.isEmpty() && stack.peek()<nums[i] && deleteCnt != k) {
                 stack.pop();
                 deleteCnt++;
             }
@@ -20,12 +35,12 @@ public class Programmers_42883 {
             stack.push(nums[i]);
 
             i++;
-            System.out.println(stack);
         }
 
         for (i=0; i<answer.length; i++) {
             answer[i] = stack.get(i);
         }
+
         return new String(answer);
 
     }
