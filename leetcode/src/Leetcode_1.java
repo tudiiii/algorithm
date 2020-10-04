@@ -14,8 +14,9 @@ public class Leetcode_1 {
         Map<Integer, Integer> answerMap = new HashMap<>();
 
         for(int i=0;i<nums.length;i++) 	{
-            int num = target - nums[i];
+            int num = target - nums[i]; // target이 되기 위해 필요한 수
             if(answerMap.containsKey(num))
+                // num의 인덱스, num과 합하면 taget이 되는 수의 인덱스
                 return new int[] {i, answerMap.get(num)};
             answerMap.put(nums[i], i);
         }
@@ -33,22 +34,23 @@ public class Leetcode_1 {
         int count;
 
         for(int i=0;i<nums.length;i++){
-            int num = target-nums[i];
+            int num = target-nums[i]; // target이 되기 위해 필요한 수
             count=0;
 
             while(count!=nums.length){
                 if(num == nums[count] && count!=i){
+                    // 합해서 target이 되는 수의 인덱스
                     answerList.add(i);
                     answerList.add(count);
-                    System.out.println(answerList.size());
                     break;
                 }
                 count++;
             }
 
-            if(answerList.size()==2) break;
+            if(answerList.size()==2) break; // answerList에 필요한 값이 있으면 break
         }
 
+        // List -> array
         int[] answer = new int[answerList.size()];
         for(int i=0; i<answerList.size(); i++){
             answer[i] = answerList.get(i);
