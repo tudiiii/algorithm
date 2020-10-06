@@ -15,6 +15,7 @@ public class Leetcode_448 {
             set.add(num);
         }
 
+        System.out.println(set);
         for(int i = 1; i<= nums.length; i++) {
             if(!set.contains(i)) // num 값을 포함하고 있지 않으면 사라진 숫자이기 때문에
                 disappearNum.add(i); // disappeareNum에 add();
