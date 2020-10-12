@@ -1,36 +1,34 @@
+/* 3sum
+Runtime: 482 ms
+Memory Usage: 43.4 MB
+ */
+
 import java.util.*;
 
 public class Leetcode_15 {
     public List<List<Integer>> threeSum(int[] nums) {
 
         if(nums.length<3) return new ArrayList<>();
+        Arrays.sort(nums);
 
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> numList = new ArrayList<>();
+        Set<List<Integer>> result = new HashSet<>(); // 리스트 내 리스트 중복 제거
 
-        for(int num:nums) numList.add(num);
-        Collections.sort(numList); // 리스트 정렬
+        int sum;
+        for(int i=0;i<nums.length-2;i++){
+            int j=i+1;
+            int z=nums.length-1;
 
-        while(!numList.isEmpty()){
-            int standard = numList.remove(0);
-            System.out.println("standard====" + standard);
-
-            for(int i=0;i<numList.size()-1;i++){
-                int nextNum = numList.get(i);
-                System.out.println("nextNum====" + nextNum);
-                for(int j=i+1;j<numList.size();j++){
-                    if(-numList.get(j) == (standard+nextNum)){
-                        List<Integer> small = new ArrayList<>(Arrays.asList(standard,nextNum,numList.get(j)));
-
-                        if(!result.contains(small)){
-                            result.add(small);
-                        }
-
-                    }
+            while(z>j){
+                sum = nums[i] + nums[j] + nums[z];
+                if(sum>0) z--;
+                else if(sum<0) j++;
+                else{
+                    result.add(Arrays.asList(nums[i],nums[j],nums[z]));
+                    z--; j++;
                 }
             }
         }
 
-        return result;
+        return new ArrayList<>(result);
     }
 }
