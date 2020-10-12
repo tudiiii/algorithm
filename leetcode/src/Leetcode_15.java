@@ -20,20 +20,17 @@ public class Leetcode_15 {
                 System.out.println("nextNum====" + nextNum);
                 for(int j=i+1;j<numList.size();j++){
                     if(-numList.get(j) == (standard+nextNum)){
-                        List<Integer> small = new ArrayList<>();
-                        small.add(standard);
-                        small.add(nextNum);
-                        small.add(numList.get(j));
-                        result.add(small);
+                        List<Integer> small = new ArrayList<>(Arrays.asList(standard,nextNum,numList.get(j)));
+
+                        if(!result.contains(small)){
+                            result.add(small);
+                        }
 
                     }
                 }
             }
         }
 
-        for(int i=0;i<result.size()-1;i++){
-            if(result.get(i).equals(result.get(i+1))) result.remove(i);
-        }
         return result;
     }
 }
