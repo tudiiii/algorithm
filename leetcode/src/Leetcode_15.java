@@ -1,5 +1,5 @@
 /* 3sum
-Runtime: 482 ms
+Runtime: 28 ms
 Memory Usage: 43.4 MB
  */
 
@@ -17,6 +17,8 @@ public class Leetcode_15 {
             // nums[i] 을 기준으로 잡고 양 옆의 숫자법(left,right)를 줄여가면서 더해보는 방법
             // nums가 -4  -1 -1 0 1 2 일때
             // -4를 기준으로 left -1 , right 2의 인덱스 대입
+
+            if(i!= 0 && nums[i-1] == nums[i]) continue; // 기준 값과 다음 값이 같으면 continue => 메모이제이션
             int left = i+1;
             int right=nums.length-1;
 
