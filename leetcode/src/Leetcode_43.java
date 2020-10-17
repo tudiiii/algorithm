@@ -8,7 +8,7 @@ public class Leetcode_43 {
 
         int numLength1 = num1.length();
         int numLength2 = num2.length();
-        int[] pos = new int[numLength1 + numLength2]; // 두 수의 곱의 자릿수 == 자릿수 + 자릿수
+        int[] length = new int[numLength1 + numLength2]; // 두 수의 곱의 자릿수 == 자릿수 + 자릿수
 
         for(int i = numLength1 - 1; i >= 0; i--) {
             for(int j = numLength2 - 1; j >= 0; j--) {
@@ -16,15 +16,15 @@ public class Leetcode_43 {
                 int digit1 = i + j;
                 int digit2 = i + j + 1;
 
-                int sum = mul + pos[digit2];
+                int sum = mul + length[digit2];
 
-                pos[digit1] += sum / 10;
-                pos[digit2] = (sum) % 10;
+                length[digit1] += sum / 10;
+                length[digit2] = (sum) % 10;
             }
         }
 
         StringBuilder sb = new StringBuilder();
-        for(int p : pos){
+        for(int p : length){
             if(!(sb.length() == 0 && p == 0)) sb.append(p);
         }
 
