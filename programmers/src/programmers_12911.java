@@ -24,7 +24,7 @@
 테스트 6 〉	통과 (0.04ms, 51.5MB)
  */
 
-public class programmers_68967 {
+public class programmers_12911 {
     public int solution(int n) {
         int answer = iCount(n);
 
