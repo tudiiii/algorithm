@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import 하샤드수.Programmers_68966;
 
 public class Programmers_68966Test {
 

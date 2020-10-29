@@ -1,4 +1,4 @@
-// programmers 더 맵게
+package 더맵게;// programmers 더 맵게
 import java.util.PriorityQueue;
 
 public class programmers_42626 {

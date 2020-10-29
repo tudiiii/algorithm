@@ -1,5 +1,4 @@
 /*
-큰 수 만들기 [탐욕법(Greedy)
 테스트 1 〉	통과 (0.27ms, 53.1MB)
 테스트 2 〉	통과 (0.36ms, 53.9MB)
 테스트 3 〉	통과 (0.43ms, 52MB)
@@ -13,6 +12,9 @@
 테스트 11 〉	통과 (0.29ms, 52.8MB)
 테스트 12 〉	통과 (0.29ms, 52.4MB)
  */
+
+package 큰수만들기;
+
 import java.util.Stack;
 
 public class Programmers_42883 {

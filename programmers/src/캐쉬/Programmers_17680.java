@@ -1,5 +1,4 @@
 /*
-[1차] 캐
 테스트 1 〉	통과 (0.16ms, 51.9MB)
 테스트 2 〉	통과 (0.16ms, 52MB)
 테스트 3 〉	통과 (0.16ms, 52.3MB)
@@ -21,6 +20,8 @@
 테스트 19 〉	통과 (3.99ms, 53.5MB)
 테스트 20 〉	통과 (3.06ms, 52.6MB)
  */
+
+package 캐쉬;
 
 import java.util.LinkedList;
 import java.util.Queue;

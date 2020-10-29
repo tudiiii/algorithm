@@ -1,4 +1,4 @@
-/* 주식가격
+/*
 정확성  테스트
 테스트 1 〉	통과 (0.03ms, 52.1MB)
 테스트 2 〉	통과 (0.03ms, 53.1MB)
@@ -17,6 +17,9 @@
 테스트 4 〉	통과 (14.60ms, 72.2MB)
 테스트 5 〉	통과 (9.46ms, 62.6MB)
  */
+
+package 주식가격;
+
 public class Programmers_42584 {
     public int[] solution(int[] prices) {
         int[] answer = new int[prices.length];

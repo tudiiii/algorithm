@@ -1,4 +1,6 @@
 import org.junit.Test;
+import 체육복.programmers_42862;
+
 import static org.junit.Assert.*;
 
 public class programmers_42862Test {

@@ -17,6 +17,7 @@
 테스트 16 〉	통과 (0.38ms, 51.7MB)
  */
 
+package HIndex;
 import java.util.Arrays;
 
 public class programmers_42747 {

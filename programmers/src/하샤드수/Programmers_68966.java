@@ -17,6 +17,9 @@
 테스트 16 〉	통과 (0.02ms, 52.8MB)
 테스트 17 〉	통과 (0.02ms, 53MB)
  */
+
+package 하샤드수;
+
 public class Programmers_68966 {
     public boolean solution(int x) {
         int num = x;

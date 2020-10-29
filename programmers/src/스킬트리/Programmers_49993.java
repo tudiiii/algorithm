@@ -1,9 +1,4 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-public class Programmers_49993 {
-    /* 스킬트리
+/*
     테스트 1 〉	통과 (0.16ms, 53.1MB)
     테스트 2 〉	통과 (0.19ms, 53MB)
     테스트 3 〉	통과 (0.19ms, 52.7MB)
@@ -18,7 +13,15 @@ public class Programmers_49993 {
     테스트 12 〉	통과 (0.17ms, 51.8MB)
     테스트 13 〉	통과 (0.27ms, 52.6MB)
     테스트 14 〉	통과 (0.25ms, 52.4MB)
-     */
+ */
+
+package 스킬트리;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Programmers_49993 {
     public int solution(String skill, String[] skill_trees) {
         int answer = 0;
 

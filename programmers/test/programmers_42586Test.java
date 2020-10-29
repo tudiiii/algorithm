@@ -1,4 +1,5 @@
 import org.junit.Test;
+import 기능개발.programmers_42586;
 
 import static org.junit.Assert.*;
 

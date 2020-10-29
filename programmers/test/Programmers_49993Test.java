@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import 스킬트리.Programmers_49993;
 
 public class Programmers_49993Test {
 

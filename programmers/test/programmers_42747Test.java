@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import HIndex.programmers_42747;
 
 public class programmers_42747Test {
 

@@ -1,6 +1,7 @@
 
 import org.junit.Assert;
 import org.junit.Test;
+import 더맵게.programmers_42626;
 
 public class programmers_42626Test {
 

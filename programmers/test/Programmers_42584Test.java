@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import 주식가격.Programmers_42584;
 
 public class Programmers_42584Test {
 
