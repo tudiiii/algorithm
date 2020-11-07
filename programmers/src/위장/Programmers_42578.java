@@ -1,22 +1,24 @@
 package 위장;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class Programmers_42578 {
     public int solution(String[][] clothes) {
-        int answer = 0;
-        //[[yellow_hat, headgear], [blue_sunglasses, eyewear], [green_turban, headgear]]
-        HashMap<String, String> clothesHash = new HashMap<>();
+        int answer = 1;
+        HashMap<String, Integer> clothesHash = new HashMap<String, Integer>();
 
-        clothesHash.put("yellow_hat","headgear");
-        clothesHash.put("blue_sunglasses","eyewear");
-        clothesHash.put("green_turban","headgear");
-
-        int count = 0;
-        for(int i=0;i<clothesHash.size();i++){
-            if()
+        for(int i =0; i<clothes.length; i++){
+            clothesHash.put(clothes[i][1], clothesHash.getOrDefault(clothes[i][1], 0)+1);
         }
 
-        return answer;
+        Set<String> keySet = clothesHash.keySet();
+
+        for(String key : keySet) {
+            answer *= clothesHash.get(key)+1;
+        }
+
+        return answer-1;
+
     }
 }
