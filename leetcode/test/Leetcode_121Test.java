@@ -11,7 +11,7 @@ public class Leetcode_121Test {
         int[] prices = {2,4,1};
         int expected =2;
 
-        Assert.assertEquals(s.maxProfit(prices),expected);
+        Assert.assertEquals(s.maxProfitY(prices),expected);
     }
 
     @Test
