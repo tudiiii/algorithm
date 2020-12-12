@@ -2,21 +2,21 @@ package 베스트앨범;
 
 import java.util.*;
 /*
-테스트 1 〉	실패 (런타임 에러)
-테스트 2 〉	실패 (런타임 에러)
-테스트 3 〉	통과 (0.86ms, 51.8MB)
-테스트 4 〉	실패 (런타임 에러)
-테스트 5 〉	실패 (1.64ms, 52.4MB)
-테스트 6 〉	실패 (2.11ms, 53.2MB)
-테스트 7 〉	실패 (2.97ms, 52.3MB)
-테스트 8 〉	실패 (런타임 에러)
-테스트 9 〉	실패 (런타임 에러)
-테스트 10 〉	실패 (1.99ms, 52.9MB)
-테스트 11 〉	실패 (런타임 에러)
-테스트 12 〉	실패 (런타임 에러)
-테스트 13 〉	실패 (2.04ms, 52.5MB)
-테스트 14 〉	실패 (2.12ms, 52.2MB)
-테스트 15 〉	실패 (0.90ms, 53MB)
+테스트 1 〉	통과 (8.08ms, 53.2MB)
+테스트 2 〉	통과 (3.49ms, 51.8MB)
+테스트 3 〉	통과 (2.57ms, 52.6MB)
+테스트 4 〉	통과 (2.79ms, 54MB)
+테스트 5 〉	통과 (3.44ms, 52.9MB)
+테스트 6 〉	통과 (2.73ms, 52.7MB)
+테스트 7 〉	통과 (2.47ms, 54.2MB)
+테스트 8 〉	통과 (2.29ms, 54MB)
+테스트 9 〉	통과 (1.66ms, 52.5MB)
+테스트 10 〉	통과 (2.73ms, 52.5MB)
+테스트 11 〉	통과 (2.06ms, 53.1MB)
+테스트 12 〉	통과 (3.10ms, 52.2MB)
+테스트 13 〉	통과 (2.13ms, 52.8MB)
+테스트 14 〉	통과 (2.65ms, 53.3MB)
+테스트 15 〉	통과 (2.28ms, 52.5MB)
  */
 public class Programmers_42579 {
     public int[] solution(String[] genres, int[] plays) {
@@ -43,52 +43,42 @@ public class Programmers_42579 {
             genreCount.put(count, x);
         }
 
-        ArrayList keySetList = new ArrayList<>(genreCount.keySet());
-        keySetList.sort((o1, o2) -> (genreCount.get(o2).compareTo(genreCount.get(o1))));
+        TreeMap<Integer,String> tm = new TreeMap<>(genreCount);
+        Iterator<Integer> iteratorKey = tm.descendingKeySet().iterator();   //키값 내림차순 정렬
 
-        List<Integer> mapKey = new ArrayList<>();
+        HashMap<Integer, Integer> tmpHash = new HashMap<>();
         List<Integer> answerList = new ArrayList<>();
 
-        for(Object key : keySetList) {
-            for(int i=0;i<genreMap.size();i++){
-                if(genreMap.get(i).equals(genreCount.get(key))){
-                    mapKey.add(playMap.get(i));
-//                    System.out.println(genreCount.get(key) + " , "+ playMap.get(i) + " , " + i);
+
+        for (Iterator<Integer> it = iteratorKey; it.hasNext(); ) {
+            Integer key = it.next();
+            for(int j=0;j<genreMap.size();j++){
+                if(genreCount.get(key).equals(genreMap.get(j))){
+                    tmpHash.put(j,playMap.get(j));
                 }
-
-            }
-            mapKey.sort(Collections.reverseOrder());
-
-            for(int i=0;i<2;i++){
-                answerList.add(mapKey.get(i));
             }
 
-            mapKey.clear();
-//            System.out.println(answerList);
+            List<Integer> tmpList = new ArrayList<>(tmpHash.keySet());
+            tmpList.sort((o1, o2) -> (tmpHash.get(o2).compareTo(tmpHash.get(o1))));
+
+            for(int i=0;i<tmpList.size();i++){
+                answerList.add(tmpList.get(i));
+
+                if(i==1) break;
+            }
+
+            tmpList.clear();
+            tmpHash.clear();
+
         }
 
+        int[] answer = new int[answerList.size()];
 
-        int[] answer = new int[playSet.size() *2];
-        int count =0;
-        for(Integer key : playMap.keySet()){
-//            System.out.println(getKey(playMap,answerList.get(count)));
-            answer[count] = getKey(playMap,answerList.get(count));
-
-            count++;
-
-            if(count == playSet.size() *2) break;
+        for(int i=0;i<answerList.size();i++){
+            answer[i] = answerList.get(i);
         }
 
         return answer;
     }
 
-    public static <K, V> K getKey(Map<K, V> map, V value) {
-        // 찾을 hashmap 과 주어진 단서 value
-        for (K key : map.keySet()) {
-            if (value.equals(map.get(key))) {
-                return key;
-            }
-        }
-        return null;
-    }
 }
