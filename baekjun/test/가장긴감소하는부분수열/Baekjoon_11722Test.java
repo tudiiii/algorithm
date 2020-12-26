@@ -11,6 +11,7 @@ public class Baekjoon_11722Test {
     @Test
     public void test(){
         Assert.assertEquals(s.solution(6,new int[]{10,30,10,20,20,10}), 3);
+        Assert.assertEquals(s.solution(6,new int[]{10,30,22,20,24,23,22,21,20}), 5);
     }
 
 

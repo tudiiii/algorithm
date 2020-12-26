@@ -3,7 +3,7 @@ package 가장긴감소하는부분수열;
 public class Baekjoon_11722 {
     public int solution(int num, int[] arr){
 
-        int dp[] = new int[num+1];
+        int[] dp = new int[num+1];
         dp[1] = 1;
 
         for(int i=2;i<=num;i++){
