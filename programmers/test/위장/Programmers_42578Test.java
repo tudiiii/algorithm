@@ -8,6 +8,7 @@ public class Programmers_42578Test {
 
     @Test
     public void test(){
+        s.solution(new String[][]{});
     }
 
 }

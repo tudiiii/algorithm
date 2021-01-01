@@ -3,11 +3,27 @@ package DailyTemperatures;
 import java.util.Stack;
 
 public class Leetcode_739 {
+
+    public int[] dailyTemperatures(int[] T) {
+        int n = T.length-1;
+        int[] res = new int[n+1];
+        for(int i = n;i>0;i--){
+            for(int j = i-1;j>=0;j--){
+                if(T[j]<T[i]){
+                    res[j]=i-j;
+                }else{
+                    break;
+                }
+            }
+        }
+        return res;
+    }
+
     /*
     Runtime: 13 ms
     Memory Usage: 47.6 MB
      */
-    public int[] dailyTemperatures(int[] T) {
+    public int[] dailyTemperatures3(int[] T) {
         Stack<Integer> stack = new Stack<>();
         int[] answer = new int[T.length];
         for(int i = 0; i < T.length; i++) {
