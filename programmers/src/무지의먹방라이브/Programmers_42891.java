@@ -1,5 +1,8 @@
 package 무지의먹방라이브;
+
 import java.util.*;
+
+import static java.util.Comparator.*;
 
 public class Programmers_42891 {
 /*
@@ -55,7 +58,7 @@ public class Programmers_42891 {
 
         if(food_count <= k) return -1;
 
-        Queue<Food> pq = new PriorityQueue();
+        PriorityQueue<Food> pq = new PriorityQueue();
         for(int i=0;i<food_time_length;i++){ // 남은 음식 양 순서대로
             pq.offer(new Food(food_times[i], i+1));
         }
@@ -63,7 +66,6 @@ public class Programmers_42891 {
         food_count = 0; // 먹기 위해 사용한 시간
         long eat_time = 0; // 직전에 다먹은 음식 시간
 
-        // sum_value
         while(food_count + (pq.peek().time - eat_time) * food_time_length <= k) {
             int now = pq.poll().time;
             food_count += (now - eat_time) * food_time_length;
@@ -77,12 +79,7 @@ public class Programmers_42891 {
         }
 
         // 음식의 인덱스 기준으로 정렬
-        Collections.sort(list, new Comparator<Food>() {
-            @Override
-            public int compare(Food a, Food b) {
-                return Integer.compare(a.idx, b.idx);
-            }
-        });
+        list.sort(comparingInt(a -> a.idx));
 
         return list.get((int)((k- food_count) % food_time_length)).idx;
     }
@@ -142,7 +139,7 @@ public class Programmers_42891 {
 테스트 30 〉	통과 (0.03ms, 52.5MB)
 테스트 31 〉	통과 (0.02ms, 53MB)
 테스트 32 〉	통과 (0.03ms, 52.6MB)
-효율성  테스트
+효율성  테스트[실패]
 테스트 1 〉	실패 (3.01ms, 62MB)
 테스트 2 〉	실패 (3.08ms, 62MB)
 테스트 3 〉	실패 (3.66ms, 61.7MB)
