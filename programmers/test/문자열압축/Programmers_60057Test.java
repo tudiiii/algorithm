@@ -13,6 +13,8 @@ public class Programmers_60057Test {
     public void test(){
         Assert.assertEquals(s.solution("aabbaccc"),7);
         Assert.assertEquals(s.solution("ababcdcdababcdcd"),9);
+        Assert.assertEquals(s.solution("abcabcdede"),8);
+        Assert.assertEquals(s.solution("abcabcabcabcdededededede"),14);
+        Assert.assertEquals(s.solution("xababcdcdababcdcd"),17);
     }
-
 }
