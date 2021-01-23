@@ -1,70 +1,49 @@
 package DecodeString;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/*
+Runtime: 7 ms
+Memory Usage: 37.8 MB
+ */
 public class Leetcode_394 {
     public String decodeString(String s) {
-//        ("3[a2[c]]"),"accaccacc");
 
         StringBuilder sb = new StringBuilder();
-        StringBuilder str = new StringBuilder();
-        boolean flag = false;
-        boolean isNumber = false;
-        int count = 0;
+        StringBuilder flag = new StringBuilder("[");
 
-        for(int i=0;i<s.length();i++){
-            char c = s.charAt(i);
+        Pattern pattern = Pattern.compile("([0-9]+)\\[([a-z]*)]");
+        Matcher matcher;
 
-           if(c >= '0' && c <= '9') {
-               if(isNumber && !flag){
-                   count = count * 10 + c - '0';
-               }
-               if(!isNumber && !flag){
-                   count = c - '0';
-               }
-               isNumber = true;
-            }
-           else if(c == '['){
-               if(flag){
-                   int z = i;
-                   int tmp = s.charAt(z-1) - '0';
-                   StringBuilder re = new StringBuilder();
-                   while(z<s.length()){
-                       if(s.charAt(z)==']') {
-                           break;
-                       }
-                       if(s.charAt(z)!='['){
-                           re.append(s.charAt(z));
-                       }
-                       z++;
-                   }
+        while(flag.toString().contains("[")) {
+            flag.setLength(0);
+            matcher = pattern.matcher(s);
+            while (matcher.find()) {
+                String str = matcher.group();
+                int num = Integer.parseInt(matcher.group(1));
 
-                   for(int j=0;j<tmp;j++){
-                       System.out.println(j);
-                       str.append(re);
-                   }
-                   i = z+re.length()-1;
-                   System.out.println("i---- " + i);
-               }
-               flag=true;
-               isNumber=false;
-           }else if(c==']'){
-               flag=false;
-               for(int j=0;j<count;j++){
-                   sb.append(str);
-               }
-               str.setLength(0);
-           }
-            else{
-                if(flag){
-                    str.append(c);
-                }else{
-                    sb.append(c);
+                Pattern p = Pattern.compile("\\[(.*?)]");
+                Matcher m = p.matcher(str);
+                StringBuilder tmp = new StringBuilder();
+
+                while (m.find()) {
+                    tmp.append(m.group(1));
                 }
+
+                for (int i = 0; i < num; i++) {
+                    sb.append(tmp);
+                }
+
+                s = s.replace(str, sb);
+                flag.append(s);
+
+                sb.setLength(0);
             }
 
-            System.out.println("count " + count);
         }
-        System.out.println("sb " + sb);
-        return sb.toString();
+
+        return s;
 
     }
 }
