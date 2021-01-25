@@ -1,11 +1,11 @@
+package RotateImage;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+public class Leetcode_48Test {
 
-public class RotateImageTest {
-
-    RotateImage s = new RotateImage();
+    Leetcode_48 s = new Leetcode_48();
 
     @Test
     public void test(){
