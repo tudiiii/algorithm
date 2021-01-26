@@ -1,6 +1,8 @@
+package K번째수;
+
 import java.util.Arrays;
 
-public class KthNum {
+public class Programmers_42748 {
 
     public int[] solution(int[] array, int[][] commands){
         int length = commands.length;
