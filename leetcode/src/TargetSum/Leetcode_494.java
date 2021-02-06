@@ -1,5 +1,9 @@
 package TargetSum;
 
+/*
+Runtime: 623 ms
+Memory Usage: 38.5 MB
+ */
 public class Leetcode_494 {
     int count = 0;
 
