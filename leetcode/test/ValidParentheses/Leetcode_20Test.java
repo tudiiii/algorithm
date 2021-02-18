@@ -1,16 +1,20 @@
 package ValidParentheses;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class Leetcode_20Test {
     Leetcode_20 s = new Leetcode_20();
 
     @Test
     public void test(){
-        Assert.assertEquals(s.isValid("()"),true);
+        assertTrue(s.isValid("()"));
+        assertTrue(s.isValid("()[]{}"));
+        assertFalse(s.isValid("(]"));
+        assertFalse(s.isValid("([)]"));
+        assertFalse(s.isValid("{[]}"));
     }
 
 }
