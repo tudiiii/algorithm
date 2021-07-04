@@ -1,5 +1,8 @@
 package MaximumSubarray;
-
+/*
+Runtime: 0 ms
+Memory Usage: 39 MB
+ */
 import static java.lang.Math.max;
 
 // kadane algorithm
