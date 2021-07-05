@@ -29,7 +29,6 @@ public class Leetcode_39Test {
     public void test2(){
 
         List<List<Integer>> list = new ArrayList<>();
-        list.add(new ArrayList(Arrays.asList()));
 
         Assert.assertEquals(s.combinationSum(new int[]{2},1),list);
     }
