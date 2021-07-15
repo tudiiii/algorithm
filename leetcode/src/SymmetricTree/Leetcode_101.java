@@ -16,8 +16,15 @@ class TreeNode {
 
 public class Leetcode_101 {
     public boolean isSymmetric(TreeNode root) {
+        return root!=null && isSymmetricTree(root.left, root.right);
+    }
 
-        boolean result = true;
-        return result;
+    public boolean isSymmetricTree(TreeNode right, TreeNode left){
+        if(right==null && left==null) return true;
+        if(right==null || left==null) return false;
+        if(right.val!=left.val) return false;
+
+        return isSymmetricTree(right.left, left.right) && isSymmetricTree(right.right,left.left);
     }
 }
+
