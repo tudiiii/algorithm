@@ -12,5 +12,7 @@ public class Leetcode_70Test {
     public void test(){
         Assert.assertEquals(s.climbStairs(2),2);
         Assert.assertEquals(s.climbStairs(3),3);
+        Assert.assertEquals(s.climbStairs(4),5);
+        Assert.assertEquals(s.climbStairs(5),8);
     }
 }
