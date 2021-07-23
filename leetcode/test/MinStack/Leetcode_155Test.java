@@ -2,13 +2,12 @@ package MinStack;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Leetcode_155Test {
-    Leetcode_155 s = new Leetcode_155();
+    MinStack s = new MinStack();
 
     @Test
     public void test(){
+
 
     }
 }
