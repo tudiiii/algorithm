@@ -10,6 +10,7 @@ public class Programmers_82612Test {
     @Test
     public void test(){
         assertEquals(s.solution(3,20,4),10);
+        assertEquals(s.solution(3,20,5),25);
     }
 
 }
