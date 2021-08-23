@@ -25,6 +25,7 @@ package 부족한금액계산하기;
 테스트 22 〉	통과 (0.06ms, 60.3MB)
 테스트 23 〉	통과 (0.03ms, 58.1MB)
  */
+
 public class Programmers_82612 {
     public long solution(int price, int money, int count) {
         long result = money;
