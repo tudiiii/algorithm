@@ -49,6 +49,7 @@ public class Programmer_83201 {
         for(int i=0;i<length;i++){
             if(!isMax[i]){
                 isMax[i]=true;
+
               for(int j=0;j<length;j++){
                   tmp = scores[i][i];
                   if(tmp>scores[j][i]&&i!=j){
