@@ -69,7 +69,7 @@ public class Programmer_83201 {
             }
         }
 
-        // true, 자기 자신을 빼기
+        // true 일 경우, 자기 자신을 빼기
         for(int i=0;i<scores.length;i++){
             for(int j=0;j<scores.length;j++){
                 if(isMax[i]&&i==j){
@@ -79,6 +79,7 @@ public class Programmer_83201 {
             }
         }
 
+        // true 일 경우, 자기 자신 제외하고 평균을 구함
         for(int i=0;i<length;i++){
             if(isMax[i]){
                 sum[i] = sum[i]/(length-1);
