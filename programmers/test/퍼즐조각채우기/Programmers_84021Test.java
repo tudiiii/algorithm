@@ -10,9 +10,15 @@ public class Programmers_84021Test {
 
     @Test
     public void test(){
-        int[][] game_board = {{}};
-        int[][] table = {{}};
+
+        int[][] game_board = {{1,1,0,0,1,0},{0,0,1,0,1,0},{0,1,1,0,0,1},{1,1,0,1,1,1},{1,0,0,0,1,0},{0,1,1,1,0,0}};
+        int[][] table = {{1,0,0,1,1,0},{1,0,1,0,1,0},{0,1,1,0,1,1},{0,0,1,0,0,0},{1,1,0,1,1,0},{0,1,0,0,0,0}};
+
+        int[][] game_board2 = {{0,0,0},{1,1,0},{1,1,}};
+        int[][] table2 = {{1,1,1},{1,0,0},{0,0,0}};
+
         assertEquals(s.solution(game_board,table),14);
+        assertEquals(s.solution(game_board2,table2),0);
     }
 
 }
