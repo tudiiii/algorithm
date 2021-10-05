@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class Leetcode_39Test {
 
     Leetcode_39 s = new Leetcode_39();
@@ -29,6 +27,7 @@ public class Leetcode_39Test {
     public void test2(){
 
         List<List<Integer>> list = new ArrayList<>();
+
 
         Assert.assertEquals(s.combinationSum(new int[]{2},1),list);
     }
