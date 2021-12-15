@@ -1,32 +1,32 @@
 /*
 정확성  테스트
-테스트 1 〉	통과 (1.26ms, 76.8MB)
-테스트 2 〉	통과 (3.14ms, 73MB)
-테스트 3 〉	통과 (39.50ms, 89.6MB)
-테스트 4 〉	통과 (154.40ms, 100MB)
-테스트 5 〉	통과 (462.38ms, 117MB)
-테스트 6 〉	통과 (6.10ms, 76.6MB)
-테스트 7 〉	통과 (24.92ms, 91.6MB)
-테스트 8 〉	통과 (168.23ms, 105MB)
-테스트 9 〉	통과 (446.95ms, 115MB)
-테스트 10 〉	통과 (129.85ms, 84.3MB)
-테스트 11 〉	통과 (107.64ms, 102MB)
-테스트 12 〉	통과 (138.18ms, 87.9MB)
-테스트 13 〉	통과 (221.10ms, 103MB)
-테스트 14 〉	통과 (1.65ms, 79.7MB)
-테스트 15 〉	통과 (35.18ms, 88.4MB)
-테스트 16 〉	통과 (29.57ms, 93.4MB)
-테스트 17 〉	통과 (36.52ms, 80.4MB)
-테스트 18 〉	통과 (48.35ms, 86MB)
-테스트 19 〉	통과 (10.64ms, 77.1MB)
-테스트 20 〉	통과 (36.07ms, 84.6MB)
-테스트 21 〉	통과 (42.20ms, 97.2MB)
-테스트 22 〉	통과 (489.29ms, 96.9MB)
-테스트 23 〉	통과 (80.48ms, 90.1MB)
-테스트 24 〉	통과 (107.93ms, 108MB)
-테스트 25 〉	통과 (1.33ms, 71.6MB)
-테스트 26 〉	통과 (1.55ms, 76.5MB)
-테스트 27 〉	통과 (1.24ms, 77.8MB)
+테스트 1 〉	통과 (1.40ms, 71.1MB)
+테스트 2 〉	통과 (3.37ms, 78.5MB)
+테스트 3 〉	통과 (25.11ms, 81.8MB)
+테스트 4 〉	통과 (105.13ms, 100MB)
+테스트 5 〉	통과 (258.84ms, 91.8MB)
+테스트 6 〉	통과 (4.08ms, 89.3MB)
+테스트 7 〉	통과 (18.35ms, 83.8MB)
+테스트 8 〉	통과 (94.42ms, 86.3MB)
+테스트 9 〉	통과 (255.62ms, 88.9MB)
+테스트 10 〉	통과 (75.63ms, 90.9MB)
+테스트 11 〉	통과 (91.64ms, 93.6MB)
+테스트 12 〉	통과 (91.21ms, 85.4MB)
+테스트 13 〉	통과 (128.97ms, 104MB)
+테스트 14 〉	통과 (1.47ms, 75.6MB)
+테스트 15 〉	통과 (24.33ms, 91.8MB)
+테스트 16 〉	통과 (18.92ms, 85.5MB)
+테스트 17 〉	통과 (29.36ms, 87.6MB)
+테스트 18 〉	통과 (19.29ms, 84.3MB)
+테스트 19 〉	통과 (7.16ms, 73.4MB)
+테스트 20 〉	통과 (32.10ms, 78.3MB)
+테스트 21 〉	통과 (38.96ms, 97.3MB)
+테스트 22 〉	통과 (223.27ms, 90.9MB)
+테스트 23 〉	통과 (48.11ms, 85.7MB)
+테스트 24 〉	통과 (77.81ms, 108MB)
+테스트 25 〉	통과 (1.59ms, 77.6MB)
+테스트 26 〉	통과 (1.33ms, 74.3MB)
+테스트 27 〉	통과 (1.47ms, 75.7MB)
  */
 package 실패율;
 
@@ -44,25 +44,21 @@ public class Programmers_42889 {
         }
 
         int level = 1;
+        int person;
         while(!queue.isEmpty()){
             if(level==N+1) break;
 
-            int cnt = 0;
+            person = 0;
             for (int stage : stages) {
-                if (stage == queue.peek() && stage<=N && stage==level) {
-                    cnt++;
+                if (stage==level) {
+                    person++;
                     queue.poll();
                 }
             }
-
-            failMap.put(level++,(double)cnt/queue.size());
-
-            if(queue.isEmpty()&&level<=N){
-                while(level<=N)
-                    failMap.put(level++,0.0);
-            }
-
+            failMap.put(level++,(double)person/queue.size());
         }
+
+        while(level<=N)  failMap.put(level++,0.0);
 
         List<Integer> failSetList = new ArrayList<>(failMap.keySet());
         failSetList.sort((o1, o2) -> (failMap.get(o2).compareTo(failMap.get(o1))));
