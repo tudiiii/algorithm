@@ -1,15 +1,15 @@
 /*
 정확성  테스트
-테스트 1 〉	통과 (1.33ms, 69.9MB)
-테스트 2 〉	통과 (1.19ms, 79MB)
-테스트 3 〉	통과 (1.17ms, 75.2MB)
-테스트 4 〉	통과 (1.17ms, 75.9MB)
-테스트 5 〉	통과 (1.18ms, 78MB)
-테스트 6 〉	통과 (1.12ms, 76.1MB)
-테스트 7 〉	통과 (1.32ms, 73.5MB)
-테스트 8 〉	통과 (1.28ms, 73.7MB)
-테스트 9 〉	통과 (1.18ms, 75.5MB)
-테스트 10 〉	통과 (1.68ms, 75.8MB)
+테스트 1 〉	통과 (0.06ms, 77.5MB)
+테스트 2 〉	통과 (0.08ms, 75.8MB)
+테스트 3 〉	통과 (0.06ms, 75.8MB)
+테스트 4 〉	통과 (0.07ms, 76.1MB)
+테스트 5 〉	통과 (0.10ms, 71.1MB)
+테스트 6 〉	통과 (0.13ms, 83.6MB)
+테스트 7 〉	통과 (0.09ms, 77.2MB)
+테스트 8 〉	통과 (0.13ms, 78.2MB)
+테스트 9 〉	통과 (0.11ms, 72MB)
+테스트 10 〉	통과 (0.07ms, 80.3MB)
  */
 package 숫자문자열과영단어;
 
@@ -18,7 +18,6 @@ import java.util.Map;
 
 public class Programmer_81301 {
     public int solution(String s) {
-        boolean isNumeric = s.chars().allMatch( Character::isDigit );
         Map<Integer, String > wordMap = new HashMap<>();
 
         wordMap.put(0,"zero");
@@ -31,10 +30,6 @@ public class Programmer_81301 {
         wordMap.put(7,"seven");
         wordMap.put(8,"eight");
         wordMap.put(9,"nine");
-
-        if(isNumeric) {
-            return Integer.parseInt(s);
-        }
 
         for(int i=0;i<10;i++){
             if(s.contains(wordMap.get(i))) {
