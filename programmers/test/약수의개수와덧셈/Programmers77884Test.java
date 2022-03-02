@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class Programmers77884Test {
-    Programmers_77884 s = new Programmers_77884();
+    Programmers_77884_2 s = new Programmers_77884_2();
 
 
     @Test
