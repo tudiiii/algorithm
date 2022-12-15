@@ -1,4 +1,4 @@
-package 괄호의값;
+package 자료구조.괄호의값;
 
 import java.util.Stack;
 
