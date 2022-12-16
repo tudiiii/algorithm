@@ -20,15 +20,50 @@ public class B_20546 {
             price[i] = Integer.parseInt(st.nextToken());
         }
 
+        int bnp = bnp();
+        int timing = timing();
+
+        if(bnp>timing) System.out.println("BNP");
+        else if(bnp<timing) System.out.println("TIMING");
+        else System.out.println("SAMESAME");
     }
 
-    public int bnp() {
+    public static int bnp() {
 
-        return 1;
+        int jCnt = 0;
+        int money = n;
+
+        for (int j : price) {
+            if (j <= money) {
+                int cnt = money / j;
+                money -= j * cnt;
+                jCnt += cnt;
+            }
+        }
+
+        return jCnt*price[13]+money;
     }
 
-    public int timing() {
+    public static int timing() {
 
-        return 1;
+        int sCnt = 0;
+        int money = n;
+
+        for (int j= 0; j < price.length; j++) {
+            if(j<3) continue;
+
+            if (price[j-3]>price[j-2] && price[j-2]>price[j-1]){
+                int cnt = money / price[j];
+                money -= price[j] * cnt;
+                sCnt += cnt;
+            }
+
+            if (price[j-3]<price[j-2] && price[j-2]<price[j-1]){
+                money += sCnt * price[j];
+                sCnt=0;
+            }
+        }
+
+        return sCnt*price[13]+money;
     }
 }
