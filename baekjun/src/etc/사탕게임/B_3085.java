@@ -1,4 +1,4 @@
-package 사탕게임;
+package etc.사탕게임;
 
 public class B_3085 {
 

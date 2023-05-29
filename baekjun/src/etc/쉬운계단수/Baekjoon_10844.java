@@ -1,4 +1,4 @@
-package 쉬운계단수;
+package etc.쉬운계단수;
 
 public class Baekjoon_10844 {
 

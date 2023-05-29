@@ -1,3 +1,5 @@
+package etc;
+
 import java.util.*;
 public class SortInSide {
     public static void main(String[] args) {

@@ -1,5 +1,6 @@
 package 동전1;
 
+import etc.동전1.B_2293;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

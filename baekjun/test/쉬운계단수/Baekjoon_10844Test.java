@@ -1,5 +1,6 @@
 package 쉬운계단수;
 
+import etc.쉬운계단수.Baekjoon_10844;
 import org.junit.Assert;
 import org.junit.Test;
 

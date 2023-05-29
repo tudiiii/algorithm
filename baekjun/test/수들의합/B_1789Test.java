@@ -1,5 +1,6 @@
 package 수들의합;
 
+import etc.수들의합.B_1789;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

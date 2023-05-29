@@ -1,4 +1,4 @@
-package 동전1;
+package etc.동전1;
 
 public class B_2293 {
 

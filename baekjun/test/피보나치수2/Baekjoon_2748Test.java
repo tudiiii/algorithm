@@ -1,9 +1,8 @@
 package 피보나치수2;
 
+import etc.피보나치수2.Baekjoon_2748;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class Baekjoon_2748Test {
 

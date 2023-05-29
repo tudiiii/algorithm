@@ -1,4 +1,4 @@
-package 피보나치수2;
+package etc.피보나치수2;
 
 
 public class Baekjoon_2748 {

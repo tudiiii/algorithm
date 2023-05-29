@@ -1,4 +1,4 @@
-package 수들의합;
+package etc.수들의합;
 
 public class B_1789 {
     public static int searchNum (long num){
