@@ -28,26 +28,27 @@ import java.util.List;
 
 public class Programmers_12981 {
     public int[] solution(int n, String[] words) {
-        List<String> list = new ArrayList<>();
+        List<String> wordList = new ArrayList<>();
 
-        int gameCount =1;
-        int person =0;
+        int person = 0;
+        int game = 1;
 
-        for(int i=0;i<words.length;i++){
+        for (int i = 0; i < words.length; i++) {
             person++;
 
-            if(i>0&&words[i-1].charAt(words[i-1].length()-1)!=words[i].charAt(0) || list.contains(words[i])){
-                return new int[]{person,gameCount};
+            if (i>0 && words[i-1].charAt(words[i-1].length()-1) != words[i].charAt(0)
+                || wordList.contains(words[i])) {
+                return new int[]{person, game};
             }
 
-            list.add(words[i]);
+            wordList.add(words[i]);
 
-            if(person==n){
-                gameCount++;
-                person=0;
+            if (n == person) {
+                game++;
+                person = 0;
             }
         }
 
-        return new int[]{0,0};
+        return new int[]{0, 0};
     }
 }

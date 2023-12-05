@@ -1,8 +1,8 @@
 package 영어끝말잇기;
 
-import org.junit.Test;
+import static org.junit.Assert.assertArrayEquals;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class Programmers_12981Test {
     Programmers_12981 s = new Programmers_12981();
