@@ -26,9 +26,15 @@ package 짝지어제거하기;
  */
 
 import java.util.Stack;
+
 public class Programmers_12973 {
+
     public int solution(String s)
     {
+        if (s.length() == 0) {
+            return 1;
+        }
+
         Stack<Character> word = new Stack<>();
         char[] charTmp = s.toCharArray();
 
