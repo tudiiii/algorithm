@@ -27,7 +27,7 @@ public class programmers_42747 {
 
         Arrays.sort(citations);
         for (int i = 0; i < length; i++) {
-            int k =  length - i;;
+            int k =  length - i;
             if ((length - i) <= citations[i]) {
                 answer = k;
                 break;
